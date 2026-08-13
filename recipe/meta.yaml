@@ -19,15 +19,15 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
-    - meson
+    - meson >=0.64.0
     - ninja
     - pkg-config
   host:
+    - glib >=2.80.0
+    - gobject-introspection >=1.64.0
+    - libffi >=3.0
+    - pycairo >=1.16.0
     - cairo
-    - glib
-    - gobject-introspection >=1.64
-    - libffi
-    - pycairo
     - python
     - xorg-xorgproto   # [linux]
     - zlib
@@ -35,7 +35,7 @@ requirements:
   run:
     - libgirepository
     - libiconv  # on Windows we seem to need the conda-forge version here (see #15)
-    - pycairo
+    - pycairo >=1.16
     - python
     - ucrt  # [win]
 
