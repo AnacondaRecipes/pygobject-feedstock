@@ -5,9 +5,8 @@ package:
   name: {{ name|lower }}
   version: {{ version }}
 
-{% set majmin = '.'.join(version.split('.', 2)[:2]) %}
 source:
-  url: https://download.gnome.org/sources/{{ name }}/{{ majmin }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 12760e4a0e3d04b6eb95e06f7a27e362c826d567ea613373a92c003b6c70d2d6
 
 build:
