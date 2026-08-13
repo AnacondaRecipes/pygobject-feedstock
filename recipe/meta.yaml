@@ -1,12 +1,11 @@
-{% set local_glib_pin = ">=2.80" %}
 {% set name = "pygobject" %}
 {% set version = "3.56.3" %}
-{% set majmin = '.'.join(version.split('.', 2)[:2]) %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
+{% set majmin = '.'.join(version.split('.', 2)[:2]) %}
 source:
   url: https://download.gnome.org/sources/{{ name }}/{{ majmin }}/{{ name }}-{{ version }}.tar.gz
   sha256: 12760e4a0e3d04b6eb95e06f7a27e362c826d567ea613373a92c003b6c70d2d6
@@ -53,18 +52,15 @@ test:
     - if not exist %LIBRARY_INC%\\pygobject-3.0\\pygobject.h exit 1  # [win]
     - for /f "usebackq tokens=*" %%a in (`pkg-config --variable=pygobjectincludedir --dont-define-prefix pygobject-3.0`) do if not exist "%%a/pygobject.h" exit 1  # [win]
 
-
 about:
   home: https://pygobject.gnome.org
   license: LGPL-2.1-or-later
   license_family: LGPL
   license_file: COPYING
   summary: Python bindings for GObject Introspection
-
   description: |
     PyGObject is a Python package which provides bindings for GObject based libraries
     such as GTK+, GStreamer, WebKitGTK+, GLib, GIO and many more.
-
   doc_url: https://pygobject.gnome.org
   dev_url: https://gitlab.gnome.org/GNOME/pygobject
 
