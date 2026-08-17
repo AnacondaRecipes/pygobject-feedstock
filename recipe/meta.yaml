@@ -25,7 +25,7 @@ requirements:
     - gobject-introspection >=1.64.0
     - libffi {{ libffi }}
     - pycairo >=1.16.0
-    - cairo
+    - cairo {{ cairo }}
     - python
     - xorg-xorgproto   # [linux]
     - zlib {{ zlib }}
