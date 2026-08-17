@@ -45,6 +45,7 @@ test:
     - gi.repository.GLib
     - gi._gi_cairo
   commands:
+    - pip check
     # verify that header gets installed and can be located through pkg-config
     - test -f $PREFIX/include/pygobject-3.0/pygobject.h  # [unix]
     - test -f `pkg-config --variable=pygobjectincludedir --dont-define-prefix pygobject-3.0`/pygobject.h  # [unix]
