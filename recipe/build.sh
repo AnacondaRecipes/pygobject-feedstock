@@ -2,9 +2,6 @@
 
 set -ex
 
-# get meson to find pkg-config when cross compiling
-export PKG_CONFIG=$BUILD_PREFIX/bin/pkg-config
-
 meson_config_args=(
   --wrap-mode=nofallback
   --backend=ninja
