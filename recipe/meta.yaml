@@ -27,7 +27,7 @@ requirements:
     - pycairo >=1.16.0
     - cairo {{ cairo }}
     - python
-    - xorg-xorgproto   # [linux]
+    - xorg-xorgproto {{ xorg_xorgproto }} # [linux]
     - zlib {{ zlib }}
     - freetype {{ freetype }}
   run:
